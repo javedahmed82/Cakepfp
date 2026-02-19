@@ -1,19 +1,79 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>CakePFP Generator</title>
-    <link rel="stylesheet" href="/static/style.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>PancakeSwap Avatar</title>
+  <link rel="stylesheet" href="/static/style.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1>PancakeSwap Avatar Generator</h1>
+  <div class="bg-glow"></div>
 
-        <input type="file" id="imageInput">
-        <button onclick="generateImage()">Generate</button>
+  <main class="wrap">
+    <section class="hero card">
+      <h1>
+        <span class="title-main">PancakeSwap</span>
+        <span class="title-sub">Avatar</span>
+      </h1>
+      <p class="subtitle">
+        Upload your photo and generate a cute <b>CAKE-themed</b> profile picture.
+      </p>
+    </section>
 
-        <div id="preview"></div>
-    </div>
+    <section class="card upload-card">
+      <div class="dropzone" id="dropzone">
+        <input id="file" type="file" accept="image/png,image/jpeg,image/webp" />
+        <div class="dz-inner">
+          <div class="camera">📸</div>
+          <div class="dz-title">Click to upload or drag &amp; drop</div>
+          <div class="dz-sub">PNG, JPG, WEBP supported</div>
+        </div>
+      </div>
 
-    <script src="/static/app.js"></script>
+      <div class="status-row">
+        <div id="uploadStatus" class="pill pill-muted">No file selected</div>
+      </div>
+
+      <div class="preview-grid">
+        <div class="preview-box">
+          <div class="preview-head">Upload Preview</div>
+          <div class="preview-frame">
+            <img id="uploadPreview" alt="Upload preview" />
+            <div id="uploadPlaceholder" class="placeholder">Your upload will appear here ✨</div>
+          </div>
+        </div>
+
+        <div class="preview-box">
+          <div class="preview-head">Generated Preview</div>
+          <div class="preview-frame">
+            <img id="genPreview" alt="Generated preview" />
+            <div id="genPlaceholder" class="placeholder">Your generated image will appear here ✨</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button id="generateBtn" class="btn btn-primary" disabled>Generate</button>
+        <button id="resetBtn" class="btn btn-ghost" disabled>Reset</button>
+      </div>
+
+      <div class="download-row" id="downloadRow">
+        <a id="downloadPng" class="btn btn-green" href="#" download>Download PNG</a>
+        <a id="downloadJpg" class="btn btn-blue" href="#" download>Download JPG</a>
+      </div>
+
+      <div class="steps">
+        <div class="step"><span class="badge">Step 1</span> Upload your photo</div>
+        <div class="step"><span class="badge">Step 2</span> Click Generate</div>
+        <div class="step"><span class="badge">Step 3</span> Preview &amp; Download</div>
+      </div>
+
+      <footer class="footer">
+        Made with 🥞 + 🐰
+      </footer>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
 </body>
 </html>
